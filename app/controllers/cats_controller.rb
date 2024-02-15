@@ -15,7 +15,7 @@ class CatsController < ApplicationController
     end
   
     def update
-      cat = CatFight.find(params[:id])
+      cat = Cat.find(params[:id])
       cat.update(cat_params)
       if cat.valid?
         render json: cat
@@ -25,7 +25,7 @@ class CatsController < ApplicationController
     end
   
     def destroy
-      cat = CatFight.find(params[:id])
+      cat = Cat.find(params[:id])
       if cat.destroy
         render json: cat
       else
